@@ -5,7 +5,7 @@ import Tours from "./components/tours/tours.component";
 function App() {
 	return (
 		<div className="App">
-			{/* <Reminder /> */}
+			<Reminder />
 			<Tours />
 		</div>
 	);

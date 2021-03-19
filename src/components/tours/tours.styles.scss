@@ -1,0 +1,25 @@
+@import "../../sass/variables";
+
+.tours-cont {
+	width: 100%;
+	text-align: center;
+	margin: $l-gap auto;
+
+	h1 {
+		text-transform: capitalize;
+		color: $secondary;
+	}
+
+	.underline {
+		width: 6rem;
+		height: 5px;
+		background: $ternary;
+		margin: 0 auto $l-gap auto;
+	}
+
+	.empty-tour,
+	.loading {
+		color: $secondary;
+		margin: $m-gap 0;
+	}
+}
