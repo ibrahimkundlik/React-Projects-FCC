@@ -1,0 +1,66 @@
+@import "variables";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font: $font;
+}
+
+body {
+	color: $primary;
+	background: $bg-body;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+button {
+	font: $font;
+	color: $primary;
+	background: $bg-btn;
+	color: $secondary;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background: $bg-btn-hov;
+}
+
+.App {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+	html,
+	button {
+		font-size: 17px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	html,
+	button {
+		font-size: 18px;
+	}
+}
