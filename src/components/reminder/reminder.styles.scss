@@ -3,21 +3,21 @@
 .reminder-cont {
 	width: 90%;
 	max-width: 500px;
-	margin: $lgap auto;
-	padding: $sgap $mgap;
+	margin: $l-gap auto;
+	padding: $s-gap $m-gap;
 	background: $bg-cont;
-	border-radius: 10px;
+	border-radius: $m-br;
 	box-shadow: 0px 0px 10px #a4a4a4;
 
 	h2 {
-		margin-bottom: $sgap;
+		margin-bottom: $s-gap;
 	}
 
 	.profile {
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: center;
-		margin: $sgap 0;
+		margin: $s-gap 0;
 
 		.img-cont {
 			width: 35%;
@@ -47,8 +47,6 @@
 
 	button {
 		width: 100%;
-		padding: 0.5rem;
-		margin: $sgap 0;
-		border-radius: 5px;
+		margin: $s-gap 0;
 	}
 }

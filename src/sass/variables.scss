@@ -5,11 +5,18 @@ $bg-cont: #f1faee;
 $bg-body: #1d3557;
 $bg-btn: #e95530;
 $bg-btn-hov: #e43b11;
+$ternary: #49a6e9;
+$ternary-hov: #c8e4f8;
 
 //font
 $font: 400 16px "Poppins", sans-serif;
 
 //spacing
-$sgap: 1rem;
-$mgap: 2rem;
-$lgap: 3rem;
+$s-gap: 1rem;
+$m-gap: 1.5rem;
+$l-gap: 3rem;
+
+//border-radius
+$s-br: 5px;
+$m-br: 10px;
+$l-br: 15px;
