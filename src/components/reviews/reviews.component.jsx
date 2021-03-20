@@ -32,7 +32,7 @@ const Reviews = () => {
 	};
 
 	return (
-		<div className="main-cont">
+		<div className="main-cont-reviews">
 			<h1>our reviews</h1>
 			<div className="underline"></div>
 			<div className="review-cont">

@@ -1,0 +1,66 @@
+@import "../../sass/variables";
+
+.accord-cont {
+	width: 90%;
+	max-width: 700px;
+	margin: $l-gap auto;
+	padding: $m-gap $s-gap;
+	background: $secondary;
+	border-radius: $s-br;
+	box-shadow: $box-shadow;
+
+	.accord-head {
+		text-transform: capitalize;
+		text-align: center;
+		margin-bottom: $m-gap;
+	}
+
+	.qa-cont {
+		padding: $s-gap;
+		border: 1px solid $primary;
+		border-radius: $s-br;
+		margin-bottom: $m-gap;
+
+		.question {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+
+			p {
+				width: 80%;
+			}
+
+			button {
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				padding: 0;
+				font-weight: 600;
+				font-size: 1.2rem;
+			}
+		}
+
+		.answer {
+			margin-top: $s-gap;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.accord-cont {
+		display: flex;
+		flex-flow: row nowrap;
+		max-width: 1000px;
+
+		.accord-head {
+			width: 30%;
+			padding-right: $l-gap;
+			text-align: left;
+		}
+
+		.accord-questions {
+			width: 70%;
+		}
+	}
+}
