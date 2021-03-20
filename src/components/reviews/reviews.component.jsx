@@ -10,6 +10,27 @@ import {
 const Reviews = () => {
 	const [index, setIndex] = useState(0);
 	const { name, job, image, text } = reviews[index];
+
+	const checkIndex = (ind) => {
+		if (ind < 0) return reviews.length - 1;
+		else if (ind >= reviews.length) return 0;
+		else return ind;
+	};
+
+	const handleControl = (val) => {
+		if (val) {
+			const ind = index + val;
+			setIndex(checkIndex(ind));
+		} else {
+			let newInd = Math.floor(Math.random() * reviews.length);
+			if (newInd === index) {
+				setIndex(checkIndex(newInd + 1));
+			} else {
+				setIndex(checkIndex(newInd));
+			}
+		}
+	};
+
 	return (
 		<div className="main-cont">
 			<h1>our reviews</h1>
@@ -25,14 +46,16 @@ const Reviews = () => {
 				<p className="profile-post">{job}</p>
 				<p className="profile-review">{text}</p>
 				<div className="controls">
-					<div className="prev">
+					<div className="prev" onClick={() => handleControl(-1)}>
 						<FaArrowCircleLeft />
 					</div>
-					<div className="next">
+					<div className="next" onClick={() => handleControl(1)}>
 						<FaArrowCircleRight />
 					</div>
 				</div>
-				<button className="surprise">Surprise Me</button>
+				<button className="surprise" onClick={() => handleControl()}>
+					Surprise Me
+				</button>
 			</div>
 		</div>
 	);

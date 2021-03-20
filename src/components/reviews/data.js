@@ -15,7 +15,7 @@ const reviews = [
 		image:
 			"https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
 		text:
-			"You’re never going to be in a more nurturing, supportive environment that is just a complete green field for you to learn and ask questions, and challenge and be challenged. It’s an incredible opportunity to focus and to level up in a way that you may never get again in your life, or in your career.",
+			"You’re never going to be in a more nurturing, supportive environment that is just a complete green field for you to learn and ask questions, and challenge and be challenged. It’s an incredible opportunity to focus and to level up in your career.",
 	},
 	{
 		id: 3,

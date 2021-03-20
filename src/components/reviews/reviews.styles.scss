@@ -90,10 +90,12 @@
 		.surprise {
 			color: $ternary-hov;
 			background: $ternary;
+			border: 1px solid $ternary;
 
 			&:hover {
 				background: $ternary-hov;
 				color: $ternary;
+				border: 1px solid $ternary;
 			}
 		}
 	}
