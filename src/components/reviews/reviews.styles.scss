@@ -1,0 +1,100 @@
+@import "../../sass/variables";
+
+.main-cont {
+	width: 100%;
+	text-align: center;
+	margin: $l-gap auto;
+
+	h1 {
+		text-transform: capitalize;
+		color: $secondary;
+	}
+
+	.underline {
+		width: 6rem;
+		height: 5px;
+		background: $ternary;
+		margin: 0 auto $l-gap auto;
+	}
+
+	.review-cont {
+		width: 90%;
+		max-width: 620px;
+		text-align: center;
+		margin: 0 auto;
+		padding: $m-gap $s-gap;
+		background: $secondary;
+		border-radius: $m-br;
+		box-shadow: 0px 0px 10px #847e7e;
+
+		.profile-img {
+			width: 150px;
+			height: 150px;
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+
+			.quote-icon {
+				position: absolute;
+				border-radius: 50%;
+				color: $ternary;
+				background: $ternary-hov;
+				top: 0%;
+				left: 0%;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.profile-name {
+			text-transform: capitalize;
+			font-weight: 600;
+			margin-top: $m-gap;
+		}
+
+		.profile-post {
+			text-transform: uppercase;
+			font-weight: 300;
+			margin-bottom: $s-gap;
+			font-size: 0.8rem;
+		}
+
+		.controls {
+			width: 25%;
+			max-width: 90px;
+			margin: $m-gap auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: $bg-btn;
+			font-size: 2rem;
+			.prev,
+			.next {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+			}
+		}
+
+		.surprise {
+			color: $ternary-hov;
+			background: $ternary;
+
+			&:hover {
+				background: $ternary-hov;
+				color: $ternary;
+			}
+		}
+	}
+}
