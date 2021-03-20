@@ -6,8 +6,8 @@ import Reviews from "./components/reviews/reviews.component";
 function App() {
 	return (
 		<div className="App">
-			{/* <Reminder /> */}
-			{/* <Tours /> */}
+			<Reminder />
+			<Tours />
 			<Reviews />
 		</div>
 	);
