@@ -1,0 +1,43 @@
+@import "../../sass/variables";
+
+.home-page {
+	margin: $l-gap auto;
+	width: 90%;
+	max-width: 1000px;
+
+	.react-components {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+
+		li {
+			border: 1px solid $secondary;
+			border-radius: $s-br;
+			padding: $s-gap;
+			margin-bottom: $s-gap;
+			width: 100%;
+
+			a {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.home-page .react-components {
+		li {
+			width: 45%;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.home-page .react-components {
+		li {
+			width: 30%;
+		}
+	}
+}

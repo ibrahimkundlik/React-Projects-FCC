@@ -46,11 +46,29 @@ button:hover {
 	background: $bg-btn-hov;
 }
 
+a {
+	text-decoration: none;
+	color: $bg-btn;
+}
+
+li {
+	list-style: none;
+}
+
 .App {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
+
+	.header {
+		margin-top: $l-gap;
+		font-size: 1.8rem;
+
+		a {
+			display: flex;
+		}
+	}
 }
 
 @media screen and (min-width: 768px) {
