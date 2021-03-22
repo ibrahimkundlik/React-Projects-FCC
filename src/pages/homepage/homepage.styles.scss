@@ -5,18 +5,31 @@
 	width: 90%;
 	max-width: 1000px;
 
+	h1 {
+		text-align: center;
+		text-transform: uppercase;
+		color: $ternary-hov;
+		margin-bottom: $l-gap;
+		.react-logo {
+			display: block;
+			margin: $s-gap auto;
+			color: $ternary;
+			font-size: 2rem;
+		}
+	}
+
 	.react-components {
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items: center;
 
 		li {
 			border: 1px solid $secondary;
 			border-radius: $s-br;
-			padding: $s-gap;
-			margin-bottom: $s-gap;
 			width: 100%;
+			padding: $s-gap;
+			margin-bottom: $m-gap;
 
 			a {
 				display: block;
@@ -27,8 +40,13 @@
 }
 
 @media screen and (min-width: 768px) {
-	.home-page .react-components {
-		li {
+	.home-page {
+		h1 .react-logo {
+			display: initial;
+			margin: 0 $s-gap 0 0;
+			transform: translateY(5px);
+		}
+		.react-components li {
 			width: 45%;
 		}
 	}

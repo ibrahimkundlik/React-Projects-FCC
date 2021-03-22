@@ -1,10 +1,15 @@
 import React from "react";
 import "./homepage.styles.scss";
+import { FaReact } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
 	return (
 		<div className="home-page">
+			<h1>
+				<FaReact className="react-logo" />
+				React Web Components
+			</h1>
 			<ul className="react-components">
 				<li>
 					<Link to="/reminder">Reminder</Link>
@@ -17,6 +22,9 @@ const HomePage = () => {
 				</li>
 				<li>
 					<Link to="/accordion">Accordion</Link>
+				</li>
+				<li>
+					<Link to="/menu">Menu</Link>
 				</li>
 			</ul>
 		</div>

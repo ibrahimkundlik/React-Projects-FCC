@@ -4,6 +4,7 @@ import Reminder from "./components/reminder/reminder.component";
 import Tours from "./components/tours/tours.component";
 import Reviews from "./components/reviews/reviews.component";
 import Accordion from "./components/accordion/accordion.component";
+import Menu from "./components/menu/menu.component";
 import { FaHome } from "react-icons/fa";
 //react-router
 import { Link, Route } from "react-router-dom";
@@ -21,6 +22,7 @@ function App() {
 			<Route exact path="/tours" component={Tours} />
 			<Route exact path="/reviews" component={Reviews} />
 			<Route exact path="/accordion" component={Accordion} />
+			<Route exact path="/Menu" component={Menu} />
 		</div>
 	);
 }
