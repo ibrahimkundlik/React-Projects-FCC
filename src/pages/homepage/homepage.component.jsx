@@ -26,6 +26,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/menu">Menu</Link>
 				</li>
+				<li>
+					<Link to="/tabs">Tabs</Link>
+				</li>
 			</ul>
 		</div>
 	);

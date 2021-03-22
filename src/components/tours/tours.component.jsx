@@ -14,7 +14,8 @@ const Tours = () => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
+				document.querySelector(".loading").innerText =
+					"Couldn't load the resource. \n NetworkError when attempting to fetch resource.";
 			});
 	}, []);
 

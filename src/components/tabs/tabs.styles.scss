@@ -1,0 +1,123 @@
+@import "../../sass/variables";
+
+.loading {
+	color: $secondary;
+	margin-top: $l-gap;
+	text-align: center;
+}
+
+.main-tabs-cont {
+	color: $secondary;
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto $l-gap auto;
+
+	.main-header {
+		margin-top: $l-gap;
+		text-align: center;
+	}
+
+	.underline {
+		width: 6rem;
+		height: 5px;
+		background: $ternary;
+		margin: 0 auto $l-gap auto;
+	}
+
+	.exp-cont {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		.lists,
+		.company {
+			width: 100%;
+		}
+	}
+
+	.lists {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: center;
+		margin: 0 auto $l-gap auto;
+		max-width: 450px;
+
+		.company-name {
+			padding: 5px;
+			cursor: pointer;
+
+			&:hover {
+				color: $ternary;
+			}
+		}
+
+		.active {
+			color: $ternary;
+			border-bottom: 3px solid $ternary;
+		}
+	}
+
+	.company {
+		.company-title {
+			font-weight: 300;
+		}
+
+		.company-name {
+			padding: 5px $s-gap;
+			background: $bg-btn;
+			border-radius: $s-br;
+			margin: $s-gap 0;
+			width: fit-content;
+			font-weight: 500;
+		}
+
+		.company-date {
+			font-size: 0.8rem;
+			font-weight: 300;
+			margin-bottom: $m-gap;
+		}
+
+		.company-duty {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			margin-bottom: $m-gap;
+
+			.bullet {
+				width: 10%;
+				font-size: 2rem;
+				color: $ternary;
+			}
+			p {
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.main-tabs-cont .exp-cont {
+		flex-flow: row nowrap;
+
+		.lists {
+			width: 23%;
+			max-width: 210px;
+
+			.active {
+				border-bottom: none;
+				border-left: 3px solid $ternary;
+			}
+
+			.company-name {
+				width: 100%;
+				text-align: center;
+			}
+		}
+
+		.company {
+			width: 77%;
+		}
+	}
+}
