@@ -10,6 +10,7 @@
 		text-transform: uppercase;
 		color: $ternary-hov;
 		margin-bottom: $l-gap;
+
 		.react-logo {
 			display: block;
 			margin: $s-gap auto;
@@ -34,6 +35,8 @@
 			a {
 				display: block;
 				text-align: center;
+				font-weight: 500;
+				color: $bg-btn;
 			}
 		}
 	}

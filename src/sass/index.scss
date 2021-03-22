@@ -48,7 +48,7 @@ button:hover {
 
 a {
 	text-decoration: none;
-	color: $bg-btn;
+	color: $secondary;
 }
 
 li {
@@ -67,6 +67,11 @@ li {
 
 		a {
 			display: flex;
+			color: $bg-btn;
+
+			&:hover {
+				color: $bg-btn-hov;
+			}
 		}
 	}
 }
