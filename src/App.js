@@ -6,6 +6,7 @@ import Reviews from "./components/reviews/reviews.component";
 import Accordion from "./components/accordion/accordion.component";
 import Menu from "./components/menu/menu.component";
 import Tabs from "./components/tabs/tabs.component";
+import Slider from "./components/slider/slider.component";
 import { FaHome } from "react-icons/fa";
 //react-router
 import { Link, Route } from "react-router-dom";
@@ -24,7 +25,8 @@ function App() {
 			<Route exact path="/reviews" component={Reviews} />
 			<Route exact path="/accordion" component={Accordion} />
 			<Route exact path="/Menu" component={Menu} />
-			<Route exact path="/Tabs" component={Tabs} />
+			<Route exact path="/tabs" component={Tabs} />
+			<Route exact path="/slider" component={Slider} />
 		</div>
 	);
 }

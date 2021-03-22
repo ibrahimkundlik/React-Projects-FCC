@@ -29,6 +29,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/tabs">Tabs</Link>
 				</li>
+				<li>
+					<Link to="/slider">Slider</Link>
+				</li>
 			</ul>
 		</div>
 	);

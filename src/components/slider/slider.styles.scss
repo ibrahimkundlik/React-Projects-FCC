@@ -1,0 +1,85 @@
+@import "../../sass/variables";
+
+.slider-cont {
+	color: $secondary;
+	width: 90%;
+	max-width: 700px;
+	margin: $m-gap auto;
+	text-align: center;
+	overflow: hidden;
+
+	.slash {
+		color: $ternary;
+	}
+
+	.reviews-cont {
+		position: relative;
+		height: 500px;
+
+		.prev {
+			position: absolute;
+			top: 45%;
+			left: 0%;
+			display: flex;
+		}
+
+		.next {
+			position: absolute;
+			top: 45%;
+			right: 0%;
+			display: flex;
+		}
+
+		.review {
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease-in-out;
+
+			.image-cont {
+				border-radius: 50%;
+				width: 150px;
+				height: 150px;
+				object-fit: cover;
+				border: 4px solid $ternary;
+				margin: $m-gap auto;
+				box-shadow: $box-shadow;
+			}
+
+			.name {
+				color: $bg-btn;
+				text-transform: uppercase;
+			}
+
+			.title {
+				text-transform: capitalize;
+				font-size: 0.8rem;
+				margin-bottom: $m-gap;
+			}
+
+			.quote {
+				margin: 0 auto $m-gap auto;
+				width: 85%;
+			}
+
+			.quote-icon {
+				font-size: 2.5rem;
+				color: $ternary;
+			}
+		}
+
+		.active-slide {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(0);
+		}
+		.next-slide {
+			transform: translateX(100%);
+		}
+		.last-slide {
+			transform: translateX(-100%);
+		}
+	}
+}
