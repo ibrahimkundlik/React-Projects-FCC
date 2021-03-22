@@ -1,1 +1,102 @@
 @import "../../sass/variables";
+
+.menu-cont {
+	width: 90%;
+	max-width: 1400px;
+	margin: $l-gap auto;
+	color: $secondary;
+
+	.underline {
+		width: 6rem;
+		height: 5px;
+		background: $ternary;
+		margin: 0 auto $l-gap auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	.nav-links {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 500px;
+		margin: 0 auto $l-gap auto;
+		color: $ternary;
+
+		li {
+			padding: 8px;
+			cursor: pointer;
+			font-weight: 500;
+			min-width: 60px;
+			text-align: center;
+
+			&:hover {
+				background: $ternary-hov;
+				border-radius: $s-br;
+			}
+		}
+
+		.active {
+			border-bottom: 3px solid $ternary;
+		}
+	}
+
+	.items-cont {
+		.item {
+			margin: 0 auto $l-gap auto;
+			width: 100%;
+			max-width: 450px;
+
+			.item-img {
+				height: 200px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				border: 3px solid $ternary;
+				border-radius: $s-br;
+			}
+
+			.title-price {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				align-items: center;
+				padding: $s-gap 0;
+				border-bottom: 2px dotted seagreen;
+				margin-bottom: $s-gap;
+				font-weight: 600;
+
+				.item-price {
+					color: $bg-btn;
+				}
+
+				.item-title {
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.menu-cont .items-cont {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		.item {
+			width: 45%;
+			max-width: 380px;
+		}
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.menu-cont .items-cont .item {
+		width: 30%;
+		max-width: 400px;
+	}
+}
