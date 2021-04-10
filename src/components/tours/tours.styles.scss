@@ -4,6 +4,8 @@
 	width: 100%;
 	text-align: center;
 	margin: $l-gap auto;
+	padding: 0 $m-gap;
+	max-width: 1200px;
 
 	h1 {
 		text-transform: capitalize;
@@ -21,5 +23,14 @@
 	.loading {
 		color: $secondary;
 		margin: $m-gap 0;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.tour-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: stretch;
 	}
 }

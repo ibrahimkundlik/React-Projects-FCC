@@ -15,6 +15,14 @@ const Slider = () => {
 		}
 	}, [value]);
 
+	useEffect(() => {
+		const cleanUp = setInterval(() => {
+			setValue(value + 1);
+		}, 3000);
+
+		return () => clearInterval(cleanUp);
+	}, [value]);
+
 	return (
 		<div className="slider-cont">
 			<h1>
