@@ -1,0 +1,12 @@
+@import "../../sass/variables";
+
+.grocery-cont {
+	width: 90%;
+	max-width: 1400px;
+	margin: $l-gap auto;
+	color: $secondary;
+
+	h1 {
+		text-align: center;
+	}
+}

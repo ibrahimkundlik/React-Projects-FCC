@@ -35,6 +35,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/colorgenerator">Color Generator</Link>
 				</li>
+				<li>
+					<Link to="/grocerylist">Grocery List</Link>
+				</li>
 			</ul>
 		</div>
 	);
