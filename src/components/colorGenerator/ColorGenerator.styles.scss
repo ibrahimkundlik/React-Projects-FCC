@@ -1,0 +1,82 @@
+@import "../../sass/variables";
+
+.colorGenerator {
+	color: $secondary;
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto $l-gap auto;
+
+	.navbar {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin: $l-gap 0;
+
+		form {
+			display: flex;
+			flex-flow: row nowrap;
+			margin-top: $m-gap;
+			position: relative;
+
+			.color-input {
+				width: 100%;
+				border: 3px solid white;
+				outline: none;
+			}
+
+			.color-error {
+				border-color: red;
+			}
+
+			.error-icon {
+				color: red;
+				position: absolute;
+				top: 10%;
+				right: 24%;
+				font-size: 1.5rem;
+			}
+
+			.color-input,
+			button {
+				padding: 10px;
+				border-radius: unset;
+			}
+		}
+	}
+
+	.color-list {
+		display: flex;
+		flex-flow: row wrap;
+
+		.color {
+			width: 33.33%;
+			height: 150px;
+			cursor: pointer;
+			padding: $s-gap;
+			text-align: center;
+
+			p {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: "992px") {
+	.colorGenerator {
+		.navbar {
+			form {
+				margin-top: 0;
+			}
+		}
+		.color-list {
+			.color {
+				width: 25%;
+				padding: $m-gap;
+				text-align: left;
+			}
+		}
+	}
+}

@@ -7,6 +7,7 @@ import Accordion from "./components/accordion/accordion.component";
 import Menu from "./components/menu/menu.component";
 import Tabs from "./components/tabs/tabs.component";
 import Slider from "./components/slider/slider.component";
+import ColorGenerator from "./components/colorGenerator/ColorGenerator.component";
 import { FaHome } from "react-icons/fa";
 //react-router
 import { Link, Route } from "react-router-dom";
@@ -20,13 +21,14 @@ function App() {
 				</Link>
 			</header>
 			<Route exact path="/" component={HomePage} />
-			<Route exact path="/reminder" component={Reminder} />
-			<Route exact path="/tours" component={Tours} />
-			<Route exact path="/reviews" component={Reviews} />
-			<Route exact path="/accordion" component={Accordion} />
-			<Route exact path="/Menu" component={Menu} />
-			<Route exact path="/tabs" component={Tabs} />
-			<Route exact path="/slider" component={Slider} />
+			<Route path="/reminder" component={Reminder} />
+			<Route path="/tours" component={Tours} />
+			<Route path="/reviews" component={Reviews} />
+			<Route path="/accordion" component={Accordion} />
+			<Route path="/Menu" component={Menu} />
+			<Route path="/tabs" component={Tabs} />
+			<Route path="/slider" component={Slider} />
+			<Route path="/colorgenerator" component={ColorGenerator} />
 		</div>
 	);
 }
