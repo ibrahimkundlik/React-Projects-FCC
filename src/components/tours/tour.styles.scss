@@ -1,7 +1,7 @@
 @import "../../sass/variables";
 
 .tour-cont {
-	width: 90%;
+	width: 100%;
 	max-width: 620px;
 	background: $secondary;
 	margin: $m-gap auto;
@@ -55,7 +55,6 @@
 		}
 
 		button {
-			width: 45%;
 			margin: $m-gap auto 0 auto;
 		}
 	}

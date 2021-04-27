@@ -8,9 +8,10 @@ import Menu from "./components/menu/menu.component";
 import Tabs from "./components/tabs/tabs.component";
 import Slider from "./components/slider/slider.component";
 import ColorGenerator from "./components/colorGenerator/ColorGenerator.component";
+import ErrorPage from "./components/errorPage/errorPage.component";
 import { FaHome } from "react-icons/fa";
 //react-router
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 
 function App() {
 	return (
@@ -20,15 +21,18 @@ function App() {
 					<FaHome />
 				</Link>
 			</header>
-			<Route exact path="/" component={HomePage} />
-			<Route path="/reminder" component={Reminder} />
-			<Route path="/tours" component={Tours} />
-			<Route path="/reviews" component={Reviews} />
-			<Route path="/accordion" component={Accordion} />
-			<Route path="/Menu" component={Menu} />
-			<Route path="/tabs" component={Tabs} />
-			<Route path="/slider" component={Slider} />
-			<Route path="/colorgenerator" component={ColorGenerator} />
+			<Switch>
+				<Route exact path="/" component={HomePage} />
+				<Route path="/reminder" component={Reminder} />
+				<Route path="/tours" component={Tours} />
+				<Route path="/reviews" component={Reviews} />
+				<Route path="/accordion" component={Accordion} />
+				<Route path="/Menu" component={Menu} />
+				<Route path="/tabs" component={Tabs} />
+				<Route path="/slider" component={Slider} />
+				<Route path="/colorgenerator" component={ColorGenerator} />
+				<Route path="/*" component={ErrorPage} />
+			</Switch>
 		</div>
 	);
 }
