@@ -16,7 +16,7 @@ const GroceryList = () => {
 			setState({ ...state, mssgModal: "Enter a value." });
 			return;
 		}
-		if (editId) {
+		if (editId !== null) {
 			const newList = [...state.list];
 			newList[editId] = item;
 			setState({
@@ -41,6 +41,7 @@ const GroceryList = () => {
 			item,
 		});
 		setEditId(id);
+		document.querySelector("#item-input").focus();
 	};
 
 	const deleteItem = (id) => {
@@ -60,16 +61,19 @@ const GroceryList = () => {
 					<input
 						type="text"
 						placeholder="e.g. eggs"
+						id="item-input"
 						value={state.item}
 						onChange={(e) => setState({ ...state, item: e.target.value })}
 					/>
 					<button>Submit</button>
 				</form>
-				{state.mssgModal && <p className="mssg-modal">{state.mssgModal}</p>}
+				<p className={`mssg-modal ${state.mssgModal ? "show-modal" : ""}`}>
+					{state.mssgModal}
+				</p>
 				<ul className="list-cont">
 					{state.list.map((item, id) => {
 						return (
-							<li key={id}>
+							<li key={id} className="item">
 								<p>
 									{item}{" "}
 									<span className="edit" onClick={() => editItem(item, id)}>
@@ -83,19 +87,21 @@ const GroceryList = () => {
 						);
 					})}
 				</ul>
-				<button
-					className="clear-items"
-					onClick={() =>
-						setState({
-							...state,
-							item: "",
-							mssgModal: "Entire list is cleared.",
-							list: [],
-						})
-					}
-				>
-					Clear Items
-				</button>
+				{state.list.length > 0 && (
+					<button
+						className="clear-items"
+						onClick={() =>
+							setState({
+								...state,
+								item: "",
+								mssgModal: "Entire list is cleared.",
+								list: [],
+							})
+						}
+					>
+						Clear Items
+					</button>
+				)}
 			</div>
 		</div>
 	);

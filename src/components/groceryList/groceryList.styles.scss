@@ -4,9 +4,64 @@
 	width: 90%;
 	max-width: 1400px;
 	margin: $l-gap auto;
-	color: $secondary;
 
 	h1 {
 		text-align: center;
+		color: $secondary;
+	}
+
+	.bg-cont {
+		width: 100%;
+		max-width: 550px;
+		margin: 0 auto;
+		background-color: $secondary;
+		border-radius: $m-br;
+		box-shadow: $box-shadow;
+		padding: $l-gap $m-gap;
+		margin-top: $l-gap;
+
+		form {
+			display: flex;
+			flex-flow: row nowrap;
+
+			input {
+				width: 100%;
+				padding: 5px 1rem;
+				outline: none;
+				border: 2px solid $bg-btn;
+			}
+			button {
+				border-radius: 0;
+			}
+		}
+
+		.mssg-modal {
+			border: 1px solid $ternary;
+			color: $ternary;
+			border-radius: $s-br;
+			padding: 5px;
+			margin: $m-gap 0;
+			text-align: center;
+			font-size: 0.8rem;
+			min-height: 32px;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease-in-out;
+		}
+
+		.show-modal {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.item {
+			margin-bottom: $m-gap;
+		}
+
+		.clear-items {
+			display: block;
+			width: 40%;
+			margin: 0 auto;
+		}
 	}
 }
