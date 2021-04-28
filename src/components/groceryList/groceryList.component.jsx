@@ -25,6 +25,7 @@ const GroceryList = () => {
 				mssgModal: "Item updated.",
 				list: newList,
 			});
+			document.querySelector("#item-input").blur();
 		} else {
 			setState({
 				...state,
@@ -74,15 +75,13 @@ const GroceryList = () => {
 					{state.list.map((item, id) => {
 						return (
 							<li key={id} className="item">
-								<p>
-									{item}{" "}
-									<span className="edit" onClick={() => editItem(item, id)}>
-										&#9998;
-									</span>{" "}
-									<span className="delete" onClick={() => deleteItem(id)}>
-										&#x2612;
-									</span>
-								</p>
+								<span className="item-text">{item}</span>
+								<span className="edit" onClick={() => editItem(item, id)}>
+									&#9998;
+								</span>
+								<span className="delete" onClick={() => deleteItem(id)}>
+									&#x2612;
+								</span>
 							</li>
 						);
 					})}

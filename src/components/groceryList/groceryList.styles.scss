@@ -56,6 +56,27 @@
 
 		.item {
 			margin-bottom: $m-gap;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+
+			.item-text {
+				width: 80%;
+			}
+			.edit {
+				text-align: center;
+				width: 10%;
+				color: #147914;
+				font-size: 1.2rem;
+				cursor: pointer;
+			}
+			.delete {
+				text-align: center;
+				width: 10%;
+				color: #db0404;
+				font-size: 1.3rem;
+				cursor: pointer;
+			}
 		}
 
 		.clear-items {
