@@ -38,6 +38,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/grocerylist">Grocery List</Link>
 				</li>
+				<li>
+					<Link to="/navbar">Navbar</Link>
+				</li>
 			</ul>
 		</div>
 	);
