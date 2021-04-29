@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	TiThMenu,
 	TiSocialTwitter,
@@ -6,17 +6,20 @@ import {
 	TiSocialLinkedin,
 	TiSocialYoutube,
 } from "react-icons/ti";
+import "./navbar.styles.scss";
 
 const Navbar = () => {
+	const [showMenu, setShowMenu] = useState(false);
+
 	return (
 		<div className="navbar-cont">
 			<div className="header-cont">
-				<h2>Navbar</h2>
-				<button>
+				<h1>Navbar</h1>
+				<button onClick={() => setShowMenu(!showMenu)}>
 					<TiThMenu />
 				</button>
 			</div>
-			<ul className="page-links">
+			<ul className={`${showMenu ? "page-links show-view" : "page-links"}`}>
 				<li className="page-link">
 					<a href="/navbar">Home</a>
 				</li>
@@ -30,7 +33,7 @@ const Navbar = () => {
 					<a href="/navbar">Info</a>
 				</li>
 			</ul>
-			<ul className="social-links">
+			<ul className={`${showMenu ? "social-links show-view" : "social-links"}`}>
 				<li className="social-link">
 					<a href="/navbar">
 						<TiSocialTwitter />

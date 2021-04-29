@@ -1,1 +1,125 @@
 @import "../../sass/variables";
+
+.navbar-cont {
+	width: 100%;
+	min-height: 400px;
+	margin: $l-gap 0;
+	position: relative;
+	overflow: hidden;
+
+	a {
+		color: $primary;
+	}
+
+	.header-cont {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		background: $secondary;
+		padding: $s-gap $m-gap;
+
+		button {
+			display: grid;
+			font-size: 1.2rem;
+		}
+	}
+
+	.page-links,
+	.social-links {
+		position: absolute;
+		left: 110%;
+		background: $secondary;
+		width: 100%;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.page-links {
+		top: 18%;
+		text-align: center;
+
+		.page-link {
+			width: max-content;
+			cursor: pointer;
+			margin: $s-gap auto;
+			padding: 0 10px;
+			border-bottom: 2px solid $secondary;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.page-link:hover {
+			border-color: $ternary;
+		}
+	}
+
+	.social-links {
+		top: 62%;
+		padding: $s-gap;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		.social-link {
+			font-size: 1.8rem;
+			transition: all 0.2s ease-in-out;
+
+			a {
+				display: grid;
+				padding: 10px;
+			}
+		}
+
+		.social-link:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	.show-view {
+		left: 0%;
+	}
+}
+
+@media screen and (min-width: "768px") {
+	.navbar-cont {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		min-height: unset;
+		background: $secondary;
+		padding: $s-gap;
+
+		.header-cont {
+			padding: 0;
+			button {
+				display: none;
+			}
+		}
+
+		.page-links {
+			position: unset;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 280px;
+			margin-left: 30px;
+
+			.page-link {
+				padding: 0;
+				margin: 0;
+			}
+		}
+
+		.social-links {
+			position: unset;
+			padding: 0;
+			width: 160px;
+
+			.social-link a {
+				padding: 0;
+			}
+		}
+	}
+}
