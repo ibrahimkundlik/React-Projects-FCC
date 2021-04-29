@@ -31,6 +31,7 @@ const GroceryList = () => {
 			document.querySelector("#item-input").blur();
 			setItem("");
 			setList(newList);
+			setEditId(null);
 			updateLocalStorage(newList);
 		} else {
 			const newList = [...list, item];
@@ -70,7 +71,7 @@ const GroceryList = () => {
 						value={item}
 						onChange={(e) => setItem(e.target.value)}
 					/>
-					<button>Submit</button>
+					<button>{editId !== null ? "Edit" : "Submit"}</button>
 				</form>
 				<p
 					className={`mssg-modal ${mssgModal.mssg ? "show-modal" : ""} ${
