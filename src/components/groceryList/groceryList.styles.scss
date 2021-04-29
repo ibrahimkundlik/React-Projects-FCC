@@ -28,16 +28,15 @@
 				width: 100%;
 				padding: 5px 1rem;
 				outline: none;
-				border: 2px solid $bg-btn;
+				border: 2px solid $ternary;
 			}
 			button {
 				border-radius: 0;
+				background: $ternary;
 			}
 		}
 
 		.mssg-modal {
-			border: 1px solid $ternary;
-			color: $ternary;
 			border-radius: $s-br;
 			padding: 5px;
 			margin: $m-gap 0;
@@ -47,6 +46,16 @@
 			opacity: 0;
 			visibility: hidden;
 			transition: opacity 0.3s ease-in-out;
+		}
+
+		.success {
+			border: 1px solid #147914;
+			color: #147914;
+		}
+
+		.error {
+			border: 1px solid #db0404;
+			color: #db0404;
 		}
 
 		.show-modal {

@@ -1,57 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./groceryList.styles.scss";
 
 const GroceryList = () => {
-	const [state, setState] = useState({
-		item: "",
-		mssgModal: null,
-		list: [],
-	});
+	const [item, setItem] = useState("");
+	const [list, setList] = useState(
+		JSON.parse(localStorage.getItem("list")) || []
+	);
+	const [mssgModal, setMssgModal] = useState({ mssg: "", type: "success" });
 	const [editId, setEditId] = useState(null);
+
+	useEffect(() => {
+		let timeout = setTimeout(() => {
+			setMssgModal({ mssg: "", type: "success" });
+		}, 3000);
+		return () => {
+			clearTimeout(timeout);
+		};
+	}, [list]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const item = state.item;
 		if (item === "") {
-			setState({ ...state, mssgModal: "Enter a value." });
+			setMssgModal({ mssg: "Enter a value.", type: "error" });
 			return;
 		}
 		if (editId !== null) {
-			const newList = [...state.list];
+			const newList = [...list];
 			newList[editId] = item;
-			setState({
-				...state,
-				item: "",
-				mssgModal: "Item updated.",
-				list: newList,
-			});
+			setMssgModal({ mssg: "Item updated.", type: "success" });
 			document.querySelector("#item-input").blur();
+			setItem("");
+			setList(newList);
+			updateLocalStorage(newList);
 		} else {
-			setState({
-				...state,
-				item: "",
-				mssgModal: "Item added to the list.",
-				list: [...state.list, item],
-			});
+			const newList = [...list, item];
+			setMssgModal({ mssg: "Item added to the list.", type: "success" });
+			setItem("");
+			setList(newList);
+			updateLocalStorage(newList);
 		}
 	};
 
 	const editItem = (item, id) => {
-		setState({
-			...state,
-			item,
-		});
+		setItem(item);
 		setEditId(id);
 		document.querySelector("#item-input").focus();
 	};
 
 	const deleteItem = (id) => {
-		const newList = state.list.filter((item, ind) => ind !== id);
-		setState({
-			...state,
-			mssgModal: "Item removed from the list.",
-			list: newList,
-		});
+		const newList = list.filter((item, ind) => ind !== id);
+		setList(newList);
+		setMssgModal({ mssg: "Item removed from the list.", type: "success" });
+		updateLocalStorage(newList);
+	};
+
+	const updateLocalStorage = (newList) => {
+		localStorage.setItem("list", JSON.stringify(newList));
 	};
 
 	return (
@@ -63,16 +67,20 @@ const GroceryList = () => {
 						type="text"
 						placeholder="e.g. eggs"
 						id="item-input"
-						value={state.item}
-						onChange={(e) => setState({ ...state, item: e.target.value })}
+						value={item}
+						onChange={(e) => setItem(e.target.value)}
 					/>
 					<button>Submit</button>
 				</form>
-				<p className={`mssg-modal ${state.mssgModal ? "show-modal" : ""}`}>
-					{state.mssgModal}
+				<p
+					className={`mssg-modal ${mssgModal.mssg ? "show-modal" : ""} ${
+						mssgModal.type
+					}`}
+				>
+					{mssgModal.mssg}
 				</p>
 				<ul className="list-cont">
-					{state.list.map((item, id) => {
+					{list.map((item, id) => {
 						return (
 							<li key={id} className="item">
 								<span className="item-text">{item}</span>
@@ -86,17 +94,15 @@ const GroceryList = () => {
 						);
 					})}
 				</ul>
-				{state.list.length > 0 && (
+				{list.length > 0 && (
 					<button
 						className="clear-items"
-						onClick={() =>
-							setState({
-								...state,
-								item: "",
-								mssgModal: "Entire list is cleared.",
-								list: [],
-							})
-						}
+						onClick={() => {
+							setItem("");
+							setList([]);
+							setMssgModal({ mssg: "Entire list is cleared.", type: "error" });
+							updateLocalStorage([]);
+						}}
 					>
 						Clear Items
 					</button>
