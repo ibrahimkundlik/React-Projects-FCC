@@ -10,6 +10,7 @@ import Slider from "./components/slider/slider.component";
 import ColorGenerator from "./components/colorGenerator/ColorGenerator.component";
 import GroceryList from "./components/groceryList/groceryList.component";
 import Navbar from "./components/navbar/navbar.component";
+import SidebarModal from "./components/sidebar-modal/sidebar-modal.component";
 import ErrorPage from "./components/errorPage/errorPage.component";
 import { FaHome } from "react-icons/fa";
 //react-router
@@ -35,6 +36,7 @@ function App() {
 				<Route path="/colorgenerator" component={ColorGenerator} />
 				<Route path="/grocerylist" component={GroceryList} />
 				<Route path="/navbar" component={Navbar} />
+				<Route path="/sidebarmodal" component={SidebarModal} />
 				<Route path="/*" component={ErrorPage} />
 			</Switch>
 		</div>

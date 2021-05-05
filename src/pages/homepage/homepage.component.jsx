@@ -41,6 +41,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/navbar">Navbar</Link>
 				</li>
+				<li>
+					<Link to="/sidebarmodal">Sidebar Modal</Link>
+				</li>
 			</ul>
 		</div>
 	);
