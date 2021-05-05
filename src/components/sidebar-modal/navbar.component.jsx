@@ -3,11 +3,11 @@ import { useGlobalContext } from "./context";
 import { BiMenu } from "react-icons/bi";
 
 const Navbar = () => {
-	const data = useGlobalContext();
+	const { openSidebar } = useGlobalContext();
 
 	return (
 		<div className="navbar">
-			<BiMenu />
+			<BiMenu onClick={openSidebar} />
 			<h2>Navbar</h2>
 		</div>
 	);

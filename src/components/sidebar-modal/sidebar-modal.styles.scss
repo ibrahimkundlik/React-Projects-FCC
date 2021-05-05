@@ -3,7 +3,7 @@
 .sidebar-modal {
 	color: $secondary;
 	width: 100%;
-	height: calc(100vh - 160px);
+	height: calc(100vh - 180px);
 	margin: $l-gap auto 0 auto;
 	padding: 0 $m-gap;
 	position: relative;
@@ -39,6 +39,10 @@
 			flex-flow: row nowrap;
 			align-items: center;
 			justify-content: space-between;
+
+			svg {
+				color: red;
+			}
 		}
 
 		li {
@@ -74,17 +78,34 @@
 			position: absolute;
 			z-index: 1;
 			width: 100%;
+			max-width: 650px;
+			margin: 0 auto;
 			top: 35%;
 			left: -110%;
-			padding: $s-gap;
+			padding: $m-gap;
 			text-align: center;
 			background: $primary;
 			border-radius: 5px;
 			transition: all 0.3s ease-in-out;
+
+			svg {
+				color: red;
+			}
 		}
 
 		.show-modal {
-			left: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.sidebar-modal {
+		padding: 0 $l-gap;
+
+		.sidebar {
+			padding: 0 $l-gap;
 		}
 	}
 }

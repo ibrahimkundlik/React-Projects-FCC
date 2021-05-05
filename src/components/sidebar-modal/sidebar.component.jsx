@@ -9,13 +9,13 @@ import {
 } from "react-icons/ti";
 
 const Sidebar = () => {
-	const data = useGlobalContext();
+	const { sidebar, closeSidebar } = useGlobalContext();
 
 	return (
-		<div className="sidebar">
+		<div className={`${sidebar ? "show-sidebar" : ""} sidebar`}>
 			<div className="heading">
 				<h2>Sidebar</h2>
-				<TiTimes />
+				<TiTimes onClick={closeSidebar} />
 			</div>
 			<ul>
 				<li>

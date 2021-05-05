@@ -3,13 +3,13 @@ import { useGlobalContext } from "./context";
 import { TiTimes } from "react-icons/ti";
 
 const Modal = () => {
-	const data = useGlobalContext();
+	const { modal, openModal, closeModal } = useGlobalContext();
 
 	return (
 		<div className="modal-cont">
-			<button>SHOW MODAL</button>
-			<div className="modal">
-				<TiTimes />
+			<button onClick={openModal}>SHOW MODAL</button>
+			<div className={`${modal ? "show-modal" : ""} modal`}>
+				<TiTimes onClick={closeModal} />
 				<h2>Modal Content</h2>
 			</div>
 		</div>
