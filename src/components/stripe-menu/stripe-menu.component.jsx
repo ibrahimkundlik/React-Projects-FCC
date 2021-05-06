@@ -4,17 +4,20 @@ import Navbar from "./navbar";
 import Hero from "./hero";
 import Submenu from "./submenu";
 import Sidebar from "./sidebar";
+import AppProvider from "./context";
 
 const StripeMenu = () => {
 	return (
-		<div className="stripe-menu">
-			<div className="stripe-menu-container">
-				<Navbar />
-				<Hero />
-				<Sidebar />
-				<Submenu />
+		<AppProvider>
+			<div className="stripe-menu">
+				<div className="stripe-menu-container">
+					<Navbar />
+					<Hero />
+					<Sidebar />
+					<Submenu />
+				</div>
 			</div>
-		</div>
+		</AppProvider>
 	);
 };
 

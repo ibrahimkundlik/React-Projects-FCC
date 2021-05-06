@@ -1,12 +1,15 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 import subLinks from "./data";
+import { useGlobalContext } from "./context";
 
 const Sidebar = () => {
+	const { sidebar, closeSidebar } = useGlobalContext();
+
 	return (
-		<div className="sidebar">
+		<div className={`${sidebar ? "show-sidebar" : ""} sidebar`}>
 			<div className="close-sidebar">
-				<FaTimes />
+				<FaTimes onClick={closeSidebar} />
 			</div>
 			<ul className="sidebar-cat">
 				{subLinks.map((curr, ind) => {

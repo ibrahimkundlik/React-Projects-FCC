@@ -1,9 +1,12 @@
 import React from "react";
 import heroImage from "./images/phone.svg";
+import { useGlobalContext } from "./context";
 
 const Hero = () => {
+	const { closeSubmenu } = useGlobalContext();
+
 	return (
-		<div className="hero">
+		<div className="hero" onMouseOver={closeSubmenu}>
 			<div className="hero-info">
 				<h1>
 					<span>Payments</span>

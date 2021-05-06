@@ -4,6 +4,7 @@
 	width: 100%;
 	margin: $l-gap auto 0 auto;
 	padding: $m-gap;
+	min-height: 100vh;
 	background: url("./images/hero.svg");
 	background-color: #a5d1f4;
 	background-repeat: no-repeat;
@@ -131,7 +132,7 @@
 		}
 
 		.sidebar-cat > li {
-			margin: $l-gap 0;
+			margin: $m-gap 0;
 			text-transform: capitalize;
 		}
 
@@ -164,21 +165,38 @@
 	.submenu {
 		display: none;
 		position: absolute;
-		top: 10%;
-		left: 42%;
 		background: $ternary-hov;
 		padding: $m-gap;
+		transition: all 0.3s ease-in-out;
 
 		&::after {
 			box-sizing: border-box;
 			content: "";
 			position: absolute;
-			top: -25%;
+			top: -18px;
 			left: 44%;
 			width: 20px;
 			height: 20px;
 			border: 10px solid transparent;
 			border-bottom: 10px solid $ternary-hov;
+		}
+
+		h4 {
+			margin-bottom: $s-gap;
+		}
+
+		ul,
+		li {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+		}
+
+		li {
+			margin-right: $m-gap;
+			p {
+				margin-left: 5px;
+			}
 		}
 	}
 
