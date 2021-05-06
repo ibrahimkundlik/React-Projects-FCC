@@ -2,11 +2,191 @@
 
 .stripe-menu {
 	width: 100%;
-	height: 100vh;
 	margin: $l-gap auto 0 auto;
+	padding: $m-gap;
 	background: url("./images/hero.svg");
 	background-color: #a5d1f4;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+
+	@media screen and (min-width: $tablet) {
+		padding: $m-gap $l-gap 4rem $l-gap;
+	}
+
+	.stripe-menu-container {
+		max-width: 1300px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	svg {
+		display: block;
+	}
+
+	button {
+		background: $primary;
+	}
+
+	button:hover {
+		background: $bg-body;
+	}
+
+	.navbar {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: $m-gap;
+
+		.page-links {
+			display: none;
+			@media screen and (min-width: $tablet) {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+
+				.link {
+					padding: $s-gap;
+					cursor: pointer;
+				}
+			}
+		}
+
+		.sign-in {
+			display: none;
+			@media screen and (min-width: $tablet) {
+				display: block;
+				min-width: 110px;
+			}
+		}
+
+		.nav-menu {
+			@media screen and (min-width: $tablet) {
+				display: none;
+			}
+		}
+	}
+
+	.hero {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+
+		.hero-info {
+			width: 100%;
+			@media screen and (min-width: $tablet) {
+				width: 70%;
+				padding-right: $m-gap;
+			}
+
+			h1 {
+				font-size: 3rem;
+				@media screen and (min-width: $desktop) {
+					font-size: 4.2rem;
+				}
+				span {
+					display: block;
+				}
+			}
+
+			p {
+				margin: $m-gap 0;
+			}
+		}
+
+		.hero-image {
+			display: none;
+			@media screen and (min-width: $tablet) {
+				display: block;
+				width: 30%;
+			}
+		}
+	}
+
+	.sidebar {
+		@media screen and (min-width: $tablet) {
+			display: none;
+		}
+		padding: $s-gap;
+		background: $ternary-hov;
+		border-radius: $m-br;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0%;
+		height: 0%;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease-in-out;
+
+		.close-sidebar {
+			width: 100%;
+			font-size: 1.5rem;
+			color: #d21c1c;
+			svg {
+				margin-left: auto;
+				cursor: pointer;
+			}
+		}
+
+		.sidebar-cat > li {
+			margin: $l-gap 0;
+			text-transform: capitalize;
+		}
+
+		.sidebar-cat-links {
+			display: flex;
+			flex-flow: row wrap;
+
+			li {
+				display: flex;
+				width: 50%;
+				flex-flow: row nowrap;
+				align-items: center;
+				padding: 5px;
+
+				p {
+					margin-left: $s-gap;
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+
+	.show-sidebar {
+		width: 100%;
+		height: 102%;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.submenu {
+		display: none;
+		position: absolute;
+		top: 10%;
+		left: 42%;
+		background: $ternary-hov;
+		padding: $m-gap;
+
+		&::after {
+			box-sizing: border-box;
+			content: "";
+			position: absolute;
+			top: -25%;
+			left: 44%;
+			width: 20px;
+			height: 20px;
+			border: 10px solid transparent;
+			border-bottom: 10px solid $ternary-hov;
+		}
+	}
+
+	.show-submenu {
+		display: block;
+	}
 }
+
+// @media screen and (min-width: $tablet) {
+// 	color: green;
+// }

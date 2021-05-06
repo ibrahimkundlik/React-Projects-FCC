@@ -5,7 +5,9 @@ import subLinks from "./data";
 const Sidebar = () => {
 	return (
 		<div className="sidebar">
-			<FaTimes />
+			<div className="close-sidebar">
+				<FaTimes />
+			</div>
 			<ul className="sidebar-cat">
 				{subLinks.map((curr, ind) => {
 					return (

@@ -13,8 +13,8 @@ const Navbar = () => {
 				<li className="link">Developers</li>
 				<li className="link">Company</li>
 			</ul>
-			<button>Sign In</button>
-			<button>
+			<button className="sign-in">Sign In</button>
+			<button className="nav-menu">
 				<AiOutlineMenu />
 			</button>
 		</div>

@@ -8,10 +8,12 @@ import Sidebar from "./sidebar";
 const StripeMenu = () => {
 	return (
 		<div className="stripe-menu">
-			<Navbar />
-			<Hero />
-			<Submenu />
-			<Sidebar />
+			<div className="stripe-menu-container">
+				<Navbar />
+				<Hero />
+				<Sidebar />
+				<Submenu />
+			</div>
 		</div>
 	);
 };
