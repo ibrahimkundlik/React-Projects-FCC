@@ -1,0 +1,11 @@
+@import "../../sass/variables";
+
+.stripe-menu {
+	width: 100%;
+	height: 100vh;
+	margin: $l-gap auto 0 auto;
+	background: url("./images/hero.svg");
+	background-color: #a5d1f4;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

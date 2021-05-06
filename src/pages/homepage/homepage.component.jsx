@@ -44,6 +44,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/sidebarmodal">Sidebar Modal</Link>
 				</li>
+				<li>
+					<Link to="/stripemenu">Stripe Menu</Link>
+				</li>
 			</ul>
 		</div>
 	);
