@@ -15,9 +15,9 @@ const CartCont = () => {
 			</ul>
 			<div className="total-price">
 				<p>Total Price :</p>
-				<p>{price}</p>
+				<h4>$ {price}</h4>
 			</div>
-			<button>Clear Cart</button>
+			<button className="clear-cart">Clear Cart</button>
 		</div>
 	);
 };
