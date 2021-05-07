@@ -51,6 +51,11 @@
 			border-bottom: 1.5px solid $ternary-hov;
 		}
 
+		.empty-cart {
+			text-align: center;
+			color: #ff2b2b;
+		}
+
 		.cart-item {
 			display: flex;
 			flex-flow: row nowrap;
