@@ -6,7 +6,7 @@ const Modal = () => {
 	const { modal, openModal, closeModal } = useGlobalContext();
 
 	return (
-		<div className="modal-cont">
+		<div className={`${modal ? "overlay" : ""} modal-cont`}>
 			<button onClick={openModal}>SHOW MODAL</button>
 			<div className={`${modal ? "show-modal" : ""} modal`}>
 				<TiTimes onClick={closeModal} />
