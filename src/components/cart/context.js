@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-import cartData from "./data";
 import reducer from "./reducer";
 
 const CartContext = createContext();
 
 const INITIAL_STATE = {
-	loading: false,
-	cart: cartData,
+	loading: true,
+	cart: [],
 	count: 0,
 	price: 0,
 };
@@ -29,6 +28,18 @@ const CartProvider = ({ children }) => {
 	useEffect(() => {
 		dispatch({ type: "UPDATE_PRICE_COUNT" });
 	}, [state.cart]);
+
+	const fetchData = async () => {
+		const response = await fetch(
+			"https://course-api.com/react-useReducer-cart-project"
+		);
+		const data = await response.json();
+		dispatch({ type: "FETCH_SUCCESS", payload: data });
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);
 
 	return (
 		<CartContext.Provider

@@ -17,6 +17,11 @@
 		justify-content: space-between;
 		align-items: center;
 
+		.loading {
+			width: 100%;
+			text-align: center;
+		}
+
 		.cart-icon {
 			position: relative;
 			color: $ternary;

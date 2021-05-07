@@ -42,6 +42,12 @@ const reducer = (state, action) => {
 				count: newCount,
 				price: newPrice.toFixed(2),
 			};
+		case "FETCH_SUCCESS":
+			return {
+				...state,
+				loading: false,
+				cart: action.payload,
+			};
 		default:
 			return state;
 	}
