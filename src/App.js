@@ -12,6 +12,7 @@ import GroceryList from "./components/groceryList/groceryList.component";
 import Navbar from "./components/navbar/navbar.component";
 import SidebarModal from "./components/sidebar-modal/sidebar-modal.component";
 import StripeMenu from "./components/stripe-menu/stripe-menu.component";
+import Cart from "./components/cart/cart.component";
 import ErrorPage from "./components/errorPage/errorPage.component";
 import { FaHome } from "react-icons/fa";
 //react-router
@@ -39,6 +40,7 @@ function App() {
 				<Route path="/navbar" component={Navbar} />
 				<Route path="/sidebarmodal" component={SidebarModal} />
 				<Route path="/stripemenu" component={StripeMenu} />
+				<Route path="/cart" component={Cart} />
 				<Route path="/*" component={ErrorPage} />
 			</Switch>
 		</div>

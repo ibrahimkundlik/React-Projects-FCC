@@ -47,6 +47,9 @@ const HomePage = () => {
 				<li>
 					<Link to="/stripemenu">Stripe Menu</Link>
 				</li>
+				<li>
+					<Link to="/cart">Cart</Link>
+				</li>
 			</ul>
 		</div>
 	);
