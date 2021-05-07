@@ -13,9 +13,9 @@
 
 		.react-logo {
 			display: block;
-			margin: $s-gap auto;
+			margin: 0 auto $m-gap auto;
 			color: $ternary;
-			font-size: 2rem;
+			font-size: 4rem;
 		}
 	}
 
@@ -26,17 +26,30 @@
 		align-items: center;
 
 		li {
-			border: 1px solid $secondary;
+			border: 1.5px solid $secondary;
 			border-radius: $s-br;
 			width: 100%;
-			padding: $s-gap;
 			margin-bottom: $m-gap;
+			background-color: #3f4f682d;
+
+			svg {
+				color: $ternary-hov;
+				font-size: 1.5rem;
+				margin-right: $s-gap;
+			}
 
 			a {
-				display: block;
-				text-align: center;
 				font-weight: 500;
 				color: $bg-btn;
+				padding: $s-gap $s-gap $s-gap 5rem;
+				width: 100%;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+
+				@media screen and (min-width: 768px) {
+					padding: $s-gap;
+				}
 			}
 		}
 	}
@@ -44,11 +57,6 @@
 
 @media screen and (min-width: 768px) {
 	.home-page {
-		h1 .react-logo {
-			display: initial;
-			margin: 0 $s-gap 0 0;
-			transform: translateY(5px);
-		}
 		.react-components li {
 			width: 45%;
 		}

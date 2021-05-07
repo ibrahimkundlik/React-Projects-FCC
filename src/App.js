@@ -16,16 +16,18 @@ import Cart from "./components/cart/cart.component";
 import ErrorPage from "./components/errorPage/errorPage.component";
 import { FaHome } from "react-icons/fa";
 //react-router
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch, withRouter } from "react-router-dom";
 
-function App() {
+function App({ location: { pathname } }) {
 	return (
 		<div className="App">
-			<header className="header">
-				<Link to="/">
-					<FaHome />
-				</Link>
-			</header>
+			{pathname === "/" ? null : (
+				<header className="header">
+					<Link to="/">
+						<FaHome />
+					</Link>
+				</header>
+			)}
 			<Switch>
 				<Route exact path="/" component={HomePage} />
 				<Route path="/reminder" component={Reminder} />
@@ -47,4 +49,4 @@ function App() {
 	);
 }
 
-export default App;
+export default withRouter(App);

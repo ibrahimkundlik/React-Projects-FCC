@@ -2,54 +2,27 @@ import React from "react";
 import "./homepage.styles.scss";
 import { FaReact } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import pageData from "./data";
 
 const HomePage = () => {
 	return (
 		<div className="home-page">
 			<h1>
 				<FaReact className="react-logo" />
-				React Web Components
+				React Components
 			</h1>
 			<ul className="react-components">
-				<li>
-					<Link to="/reminder">Reminder</Link>
-				</li>
-				<li>
-					<Link to="/tours">Tours</Link>
-				</li>
-				<li>
-					<Link to="/reviews">Reviews</Link>
-				</li>
-				<li>
-					<Link to="/accordion">Accordion</Link>
-				</li>
-				<li>
-					<Link to="/menu">Menu</Link>
-				</li>
-				<li>
-					<Link to="/tabs">Tabs</Link>
-				</li>
-				<li>
-					<Link to="/slider">Slider</Link>
-				</li>
-				<li>
-					<Link to="/colorgenerator">Color Generator</Link>
-				</li>
-				<li>
-					<Link to="/grocerylist">Grocery List</Link>
-				</li>
-				<li>
-					<Link to="/navbar">Navbar</Link>
-				</li>
-				<li>
-					<Link to="/sidebarmodal">Sidebar Modal</Link>
-				</li>
-				<li>
-					<Link to="/stripemenu">Stripe Menu</Link>
-				</li>
-				<li>
-					<Link to="/cart">Cart</Link>
-				</li>
+				{pageData.map((curr, ind) => {
+					const linkURL = curr.page.toLowerCase().split(" ").join("");
+					return (
+						<li key={ind}>
+							<Link to={`/${linkURL}`}>
+								{curr.icon}
+								<p>{curr.page}</p>
+							</Link>
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);
