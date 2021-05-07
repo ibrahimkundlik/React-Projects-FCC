@@ -13,9 +13,12 @@ const Navbar = () => {
 
 	const handleChange = (e) => {
 		const text = e.target.innerText;
-		const position = e.target.getBoundingClientRect();
-		const top = `calc(${position.bottom}px - 7.5rem - 35px)`;
-		const left = `calc(${(position.right + position.left) / 2}px - 7rem)`;
+		const elem = e.target.getBoundingClientRect();
+		const bodyTop = document.body.getBoundingClientRect().top;
+
+		const top = elem.bottom - bodyTop;
+		const left = elem.left;
+
 		updateHoverInfo(text, { top, left });
 		openSubmenu();
 	};

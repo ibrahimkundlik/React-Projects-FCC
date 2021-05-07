@@ -13,10 +13,10 @@ const Submenu = () => {
 				text,
 				dims: { left, top },
 			} = hoverInfo;
-			if (hoverInfo.dims) {
-				submenuRef.current.style.left = left;
-				submenuRef.current.style.top = top;
-			}
+
+			submenuRef.current.style.top = `${top}px`;
+			submenuRef.current.style.left = `calc(${left}px + 2rem)`;
+
 			const data = subLinks.find((curr) => curr.page === text.toLowerCase());
 			setMenuData(data);
 		}

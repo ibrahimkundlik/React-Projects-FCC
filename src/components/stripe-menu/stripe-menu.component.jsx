@@ -14,9 +14,9 @@ const StripeMenu = () => {
 					<Navbar />
 					<Hero />
 					<Sidebar />
-					<Submenu />
 				</div>
 			</div>
+			<Submenu />
 		</AppProvider>
 	);
 };
